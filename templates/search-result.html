@@ -1,0 +1,15 @@
+{% if user.last_name != 'student' %}
+<meta http-equiv="refresh" content="0; url =login" />
+{% endif %} {% if not searchResults %}
+<h1>Nothing Found!!!</h1>
+
+{% else %} {% for result in searchResults %}
+<h1>{{result.internTitle}}</h1>
+<p>{{result.companyAddress}}</p>
+<p>{{result.internshipDescription}}</p>
+<p>{{result.comName}}</p>
+<p>{{result.email}}</p>
+<p>{{result.tPhone}}</p>
+<hr />
+<br />
+{% endfor %} {% endif %}

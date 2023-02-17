@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% if user.last_name != 'company' %}
+    <meta http-equiv="refresh" content="0; url =login" />
+    {% endif %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Posts</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-success">
+      <div class="container-fluid">
+        <a class="navbar-brand fs-6 fw-bold text-white">
+          {{user.first_name}}
+        </a>
+        <div class="d-flex justify-content-end">
+          <a
+            class="btn btn-outline-light text-start"
+            role="button"
+            href="company-portal"
+            >See posts</a
+          >
+
+          <form class="d-flex" action="log_out" method="post">
+            {% csrf_token %}
+            <button class="btn btn-outline-light ms-2" type="submit">
+              Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Manage Your Internship Posts</h1>
+          <a href="homeCompany" class="btn btn-success btn-lg my-2"
+            >+ Add new post</a
+          >
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            {% for post in jobposts %} {% if user.email == post.email%}
+            <div class="col-md-4">
+              <div
+                class="card mb-4 shadow-sm"
+                style="border: 2px solid #19875475"
+              >
+                <div class="card-body">
+                  <h5 class="card-title">{{post.internTitle}}</h5>
+                  <p>
+                    <span class="fw-bold" style="color: #198754"
+                      >{{post.comName}}</span
+                    >
+                    - <span>{{post.companyAddress}}</span>
+                  </p>
+                  <p class="card-text">{{post.internshipDescription}}</p>
+                  <form action="remove" method="post">
+                    {% csrf_token %}
+                    <button
+                      type="submit"
+                      class="btn btn-sm btn-outline-danger"
+                      name="id"
+                      value="{{ post.id }}"
+                    >
+                      Remove
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {% endif %}{% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

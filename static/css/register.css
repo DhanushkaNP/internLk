@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+  background-color: #fff;
+  font-family: 'Rubik', sans-serif; 
+}
+h1{
+    font-weight: 400;
+    font-family: 'Rowdies', cursive;
+    font-size: 4rem;
+    color: #000000;
+    -webkit-text-stroke: 2px #19875450;
+}
+h2{
+  padding-top: 1.5rem;
+  color: #198754;
+  font-weight: 600;
+}
+a{
+  color: #333;
+}
+
+.card{
+  border: 2px solid #19875440;
+  top:5%
+}
+.form-control{
+  background-color: #f8f9fa;
+  padding: 20px;
+  padding: 10px 15px;
+  margin-bottom: 1.3rem;
+}
+
+.form-control:focus{
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #19875450;
+    outline: 0;
+    box-shadow: none;
+}
+
+
+/* student register specific styles */

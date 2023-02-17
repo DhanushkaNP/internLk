@@ -1,0 +1,21 @@
+
+body{
+    font-family: 'Rubik', sans-serif;
+}
+h1{
+    font-weight: 400;
+    font-family: 'Rowdies', cursive;
+    color: #198754;
+    font-size: 3rem;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000000; */
+}
+.btn{
+    box-sizing: border-box;
+    width: 15%;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.container{
+    margin-top: 13%;
+}
