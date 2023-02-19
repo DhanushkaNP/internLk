@@ -1,0 +1,87 @@
+*{
+	font-family: 'Rubik', sans-serif;
+}
+
+h4{
+	font-size: 1.25rem;
+}
+.container{
+
+	max-width: 1200px;
+	margin: 20px auto;
+	
+
+}
+
+
+
+.container h2{
+
+font-size: 30px;
+border-left: 4px solid;
+padding-left: 20px;
+font-weight: 400;
+font-family: 'Rowdies', cursive;
+color: #198754;
+
+}
+
+.container .jobs{
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap:25px;
+	
+
+}
+
+.container .job{
+
+	box-shadow: 0 4px 24px -8px rgba(2,48,71,0.2);
+	padding: 20px;
+	
+	border-radius: 16px;
+	position:relative;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid rgb(138, 213, 145);
+
+
+}
+
+.container .job:hover{
+
+
+	transform: scale(1.03);
+}
+
+/* .container .descrip{
+
+
+font-size: 20px;
+
+} */
+
+.container .contact{
+
+	font-size: 15px;
+	margin: 0px;
+	padding-left: 20px;
+	padding-top: 20px;
+
+}
+
+.container .address{
+	margin-top: 0px;
+	line-height:20px;
+
+}
+
+@media(max-width: 640px){
+
+
+	.container .jobs{
+
+		grid-template-columns: 1fr  ;
+	}
+}
